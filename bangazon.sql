@@ -48,7 +48,6 @@ CREATE TABLE Paymentt_Types
 (
   type VARCHAR(30) NOT NULL,
   accNumber INT NOT NULL,
-  custID INT NOT NULL,
   payID INT NOT NULL,
   custID INT NOT NULL,
   FOREIGN KEY (custID) REFERENCES Customers(custID)
@@ -61,7 +60,6 @@ CREATE TABLE Products
   price INT NOT NULL,
   title VARCHAR(30) NOT NULL,
   description VARCHAR(30) NOT NULL,
-  custID INT NOT NULL,
   custID INT NOT NULL,
   FOREIGN KEY (custID) REFERENCES Customers(custID)
 );
@@ -90,4 +88,3 @@ CREATE TABLE Computers
   PRIMARY KEY (computerID),
   FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
 );
-Copy
