@@ -88,4 +88,3 @@ CREATE TABLE Products
   custID INT NOT NULL,
   FOREIGN KEY (custID) REFERENCES Customers(custID)
 );
-Copy
