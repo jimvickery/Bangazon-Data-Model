@@ -30,29 +30,6 @@ CREATE TABLE Orders
   PRIMARY KEY (orderID)
 );
 
-CREATE TABLE Computers
-(
-  start DATE NOT NULL,
-  NewAendttribute DATE NOT NULL,
-  enployeeID INT NOT NULL,
-  computerID INT NOT NULL,
-  PRIMARY KEY (computerID)
-);
-
-CREATE TABLE Employees
-(
-  first VARCHAR(18) NOT NULL,
-  last VARCHAR(18) NOT NULL,
-  trainingID INT NOT NULL,
-  employeeID INT NOT NULL,
-  deptID INT NOT NULL,
-  trainingID INT NOT NULL,
-  computerID INT NOT NULL,
-  FOREIGN KEY (deptID) REFERENCES Departments(deptID),
-  FOREIGN KEY (trainingID) REFERENCES Training_Programs(trainingID),
-  FOREIGN KEY (computerID) REFERENCES Computers(computerID)
-);
-
 CREATE TABLE Customers
 (
   activity240 VARCHAR(30) NOT NULL,
@@ -88,3 +65,29 @@ CREATE TABLE Products
   custID INT NOT NULL,
   FOREIGN KEY (custID) REFERENCES Customers(custID)
 );
+
+CREATE TABLE Employees
+(
+  first VARCHAR(18) NOT NULL,
+  last VARCHAR(18) NOT NULL,
+  trainingID INT NOT NULL,
+  employeeID INT NOT NULL,
+  deptID INT NOT NULL,
+  trainingID INT NOT NULL,
+  computerID INT NOT NULL,
+  PRIMARY KEY (employeeID),
+  FOREIGN KEY (deptID) REFERENCES Departments(deptID),
+  FOREIGN KEY (trainingID) REFERENCES Training_Programs(trainingID),
+  FOREIGN KEY (computerID) REFERENCES Computers(computerID)
+);
+
+CREATE TABLE Computers
+(
+  start DATE NOT NULL,
+  computerID INT NOT NULL,
+  end DATE NOT NULL,
+  employeeID INT NOT NULL,
+  PRIMARY KEY (computerID),
+  FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
+);
+Copy
