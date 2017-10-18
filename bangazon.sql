@@ -87,4 +87,3 @@ CREATE TABLE Computers
   PRIMARY KEY (computerID),
   FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
 );
-Copy
