@@ -68,7 +68,6 @@ CREATE TABLE Employees
 (
   first VARCHAR(18) NOT NULL,
   last VARCHAR(18) NOT NULL,
-  trainingID INT NOT NULL,
   employeeID INT NOT NULL,
   deptID INT NOT NULL,
   trainingID INT NOT NULL,
@@ -88,3 +87,4 @@ CREATE TABLE Computers
   PRIMARY KEY (computerID),
   FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
 );
+Copy
